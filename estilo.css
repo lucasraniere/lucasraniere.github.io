@@ -1,26 +1,46 @@
-body {
-    background: #81ecec;
+@font-face {
+    font-family: Balham;
+    src: url(font/balham.otf);
 }
 
-header {
-    border: 1px solid red;
-    width: 70%;
-    margin: 0px auto;
+borda {
+    border: solid red;
+}
+
+/* --- tags --- */
+body {
+    background: #dfe6e9;
 }
 
 article {
-    border: 1px solid red;
     width: 70%;
     margin: 0px auto;
 }
 
+h2 {
+    font-family: Balham;
+    font-weight: bold;
+}
+
+/* --- ids --- */
 #foto-perfil {
     width: 160px;
     height: 160px;
-    padding: 15px 0 0 15px;
+    padding: 15px 0 0 20px;
 }
 
 #nome {
-    font-size: 50px;
+    font-size: 60px;
     float: right;
+    padding: 30px 20px 0 0;
+}
+
+/* --- classes --- */
+.container {
+    width: 70%;
+}
+
+.page-header {
+    margin: 0px auto;
+    font-family: Balham;
 }
