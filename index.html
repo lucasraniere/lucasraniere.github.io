@@ -14,13 +14,13 @@
         <h3><b>Hello, I'm</b></h3>
         <h1><strong>Lucas Raniére</strong></h1>
         <figure>
-            <img src="assets/images/profile-pic.jpg" alt="Lucas Raniére">
+            <img id="profile-pic" src="assets/images/profile-pic.jpg" alt="Lucas Raniére">
         </figure>
         <figure>
-            <img src="assets/images/social-graph.png" alt="social graph">
+            <img id="social-graph" src="assets/images/social-graph.png" alt="social graph">
         </figure>
     </header>
-    <nav id="navi-menu">
+    <nav>
         <ul>
             <li><a href="#about-me">About me</a></li>
             <li><a href="#education">Education</a></li>
@@ -28,20 +28,20 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <main class="content">
-        <div id="about-me">
+    <main>
+        <div class="content" id="about-me">
             <h3>About me</h3>
             <p>
                 I am a PhD Candidate in Computer Science at the Federal University of Campina Grande (<a href="https://www.computacao.ufcg.edu.br/p%C3%A1gina-principal" target="_blank">UFCG</a>) and a Visiting Scholar at Indiana University Bloomington (<a href="https://bloomington.iu.edu/index.html" target="_blank">IUB</a>). I am a member of the Applied Intelligent Computing Laboratory (<a href="https://lacina.computacao.ufcg.edu.br/" target="_blank">LaCInA</a>) at UFCG and the Center for Complex Networks and Systems Research (<a href="https://cnets.indiana.edu/" target="_blank">CNetS</a>) at IUB. My research interests include complex networks, social media networks, data science, and artificial intelligence. I am currently working on using Large Language Models as tools for identifying and mitigating political polarization in social media networks.
             </p>
-            <ul>
-                <li><a href="https://github.com/lucasraniere" target="_blank">GitHub</a></li>
-                <li><a href="http://lattes.cnpq.br/4271929115416114" target="_blank">Lattes</a></li>
-                <li><a href="https://www.linkedin.com/in/lucas-raniere/" target="_blank">LinkedIn</a></li>
-                <li><a href="https://twitter.com/lucasRniere" target="_blank">Twitter/X</a></li>
+            <ul id="social-list">
+                <li><a href="https://github.com/lucasraniere" target="_blank"><img src="assets/icons/github-logo.svg" alt="GitHub" title="GitHub" width="25px"></a></li>
+                <li><a href="http://lattes.cnpq.br/4271929115416114" target="_blank"><img src="assets/icons/lattes-logo.png" alt="Lattes" title="Lattes" width="25px"></a></li>
+                <li><a href="https://www.linkedin.com/in/lucas-raniere/?locale=en_US" target="_blank"><img src="assets/icons/linkedin-logo.svg" alt="LinkedIn" title="LinkedIn" width="25px"></a></li>
+                <li><a href="https://twitter.com/lucasRniere" target="_blank"><img src="assets/icons/twitter-logo.svg" alt="Twitter/X" title="Twitter/X" width="25px"></a></li>
             </ul>
         </div>
-        <div id="education">
+        <div class="content" id="education">
             <h3>Education</h3>
             <ul>
                 <li>2021 - Current</li>
@@ -69,7 +69,7 @@
                     </ul></span>
             </ul>
         </div>
-        <div id="publications">
+        <div class="content" id="publications">
             <h3>Publications</h3>
             <ul>
                 <li>2022</li>
@@ -82,7 +82,7 @@
                     </ul>
             </ul>
         </div>
-        <div id="contact">
+        <div class="content" id="contact">
             <h3>Contact</h3>
             <ul>
                 <li>Phone numbers</li>
