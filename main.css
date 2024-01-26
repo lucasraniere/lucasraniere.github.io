@@ -8,10 +8,16 @@
     margin-right: 7em;
     position: relative;
     top: -1em;
+    z-index: 1;
 }
 
 #social-graph {
-    width: 45%;
+    width: 60%;
+    position: absolute;
+    top: -10em;
+    left: -7em;
+    rotate: -10deg;
+    clip: auto;
 }
 
 #social-list {
@@ -21,6 +27,12 @@
     li {
         display: inline;
     }
+    li a{
+        text-decoration: none;
+        color: #7FC7D9;
+        padding: 0 5px;
+        margin: 0 20px;
+    }
 }
 
 #intro-txt {
@@ -29,6 +41,7 @@
     float: left;
     position: relative;
     top: 1em;
+    z-index: 1;
 }
 
 /* classes */
