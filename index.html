@@ -6,74 +6,69 @@
     <title>Lucas Raniére J. Santos</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main2.css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src='main.js'></script>
 </head>
 <body>
     <header>
         <figure>
-            <img id="profile-pic" src="assets/images/profile-pic.jpg" alt="Lucas Raniére">
+            <img id="profile-pic" src="assets/images/profile-pic.png" alt="Lucas Raniére">
         </figure>
         <figure>
-            <img id="social-graph" src="assets/images/social-graph.png" alt="social graph">
+            <img id="social-graph" src="assets/images/network.png" alt="social graph">
         </figure>
         <div id="intro-txt">
-            <h3><b>Hello, I'm</b></h3>
             <h1><strong>Lucas Raniére</strong></h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about-me">About me</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
     <main>
         <div class="content" id="about-me">
-            <h3>About me</h3>
+            <h3>About Lucas</h3>
             <p>
                 I am a PhD Candidate in Computer Science at the Federal University of Campina Grande (<a href="https://www.computacao.ufcg.edu.br/p%C3%A1gina-principal" target="_blank">UFCG</a>) and a Visiting Scholar at Indiana University Bloomington (<a href="https://bloomington.iu.edu/index.html" target="_blank">IUB</a>). I am a member of the Applied Intelligent Computing Laboratory (<a href="https://lacina.computacao.ufcg.edu.br/" target="_blank">LaCInA</a>) at UFCG and the Center for Complex Networks and Systems Research (<a href="https://cnets.indiana.edu/" target="_blank">CNetS</a>) at IUB. My research interests include complex networks, social media networks, data science, and artificial intelligence. I am currently working on using Large Language Models as tools for identifying and mitigating political polarization in social media networks.
             </p>
             <ul id="social-list">
-                <li><a href="https://github.com/lucasraniere" target="_blank"><img src="assets/icons/github-logo.svg" alt="GitHub" title="GitHub" width="25px"></a></li>
-                <li><a href="http://lattes.cnpq.br/4271929115416114" target="_blank"><img src="assets/icons/lattes-logo.png" alt="Lattes" title="Lattes" width="25px"></a></li>
-                <li><a href="https://www.linkedin.com/in/lucas-raniere/?locale=en_US" target="_blank"><img src="assets/icons/linkedin-logo.svg" alt="LinkedIn" title="LinkedIn" width="25px"></a></li>
-                <li><a href="https://twitter.com/lucasRniere" target="_blank"><img src="assets/icons/twitter-logo.svg" alt="Twitter/X" title="Twitter/X" width="25px"></a></li>
+                <li><a href="https://github.com/lucasraniere" target="_blank"><img class="social-icon" src="assets/icons/github-logo.svg" alt="GitHub" title="GitHub" width="25px"></a></li>
+                <li><a href="http://lattes.cnpq.br/4271929115416114" target="_blank"><img class="social-icon" src="assets/icons/lattes-logo.png" alt="Lattes" title="Lattes" width="25px"></a></li>
+                <li><a href="https://orcid.org/0000-0003-1072-5067" target="_blank"><img class="social-icon" src="assets/icons/orcid.svg" alt="orcid" title="Orcid" width="25px"></a></li>
+                <li><a href="https://www.linkedin.com/in/lucas-raniere/?locale=en_US" target="_blank"><img class="social-icon" src="assets/icons/linkedin-logo.svg" alt="LinkedIn" title="LinkedIn" width="25px"></a></li>
+                <li><a href="https://twitter.com/lucasRniere" target="_blank"><img class="social-icon" src="assets/icons/twitter-logo.svg" alt="Twitter/X" title="Twitter/X" width="25px"></a></li>
             </ul>
         </div>
         <div class="content" id="education">
             <h3>Education</h3>
-            <ul>
+            <ul id="education-ul">
                 <li>2021 - Current</li>
                     <span><ul>
                         <li>PhD in Computer Science<div>Federal University of Campina Grande, Campina Grande - PB, Brazil</div></li>
-                        <ul>
-                            <li>Research topics: Political radicalization and polarization; Social Media Networks; Large Language Models</li>
-                        </ul>
+                        <li>Research topics: Political radicalization and polarization; Social Media Networks; Large Language Models</li>
                     </ul></span>
-                    <li>2018 - 2020</li>
+                <li>2018 - 2020</li>
                     <span><ul>
                         <li>Master's Degree in Computer Science<div>Federal University of Campina Grande, Campina Grande - PB, Brazil</div></li>
-                        <ul>
-                            <li>Research topics: Experimental Software Engineering; Software artifacts traceability</li>
-                            <li>Dissertation title: Improving Traceability Recovery Between Bugs Reports and Manual Test Cases</li>
-                        </ul>
+                        <li>Research topics: Experimental Software Engineering; Software artifacts traceability</li>
+                        <li>Dissertation title: Improving Traceability Recovery Between Bugs Reports and Manual Test Cases</li>
                     </ul></span>
-                    <li>2012 - 2017</li>
+                <li>2012 - 2017</li>
                     <span><ul>
                         <li>Bachelor's Degree in Computer Science<div>Federal University of Alagoas, Arapiraca - AL, Brazil</div></li>
-                        <ul>
-                            <li>Research topics: Digital inclusion and accessibility; Machine text translation; Brazilian Sign Language (LIBRAS)</li>
-                            <li>Term Paper Title: Use of Probabilistic Reasoning to Resolve Lexical Ambiguities in Portuguese</li>
-                        </ul>
+                        <li>Research topics: Digital inclusion and accessibility; Machine text translation; Brazilian Sign Language (LIBRAS)</li>
+                        <li>Term Paper Title: Use of Probabilistic Reasoning to Resolve Lexical Ambiguities in Portuguese</li>
                     </ul></span>
             </ul>
         </div>
         <div class="content" id="publications">
             <h3>Publications</h3>
-            <ul>
+            <ul id="pub-ul">
                 <li>2022</li>
                     <ul>
                         <li><span>Uniting Politics and Pandemic: a Social Network Analysis on the COVID Parliamentary Commission of Inquiry in Brazil.</span> Santos, L. R. J., Balby Marinho, L., & Calazans Campelo, C. E. (2022, November). In Proceedings of the XXVIII Brazilian Symposium on Multimedia and the Web. <a href="https://doi.org/10.1145/3539637.3556992" target="_blank">https://doi.org/10.1145/3539637.3556992</a></li>
@@ -86,12 +81,14 @@
         </div>
         <div class="content" id="contact">
             <h3>Contact</h3>
-            <ul>
+            <ul id="phone-ul">
                 <li>Phone numbers</li>
                 <ul>
                     <li><address>+55 (82) 99683-4878 (<a href="https://api.whatsapp.com/send?phone=5582996834878" target="_blank">WhatsApp</a>, Telegram, Text)</address></li>
                     <li><address>+1 (812) 381-7460 (<a href="https://api.whatsapp.com/send?phone=18123817460" target="_blank">WhatsApp</a>, Text)</address></li>
                 </ul>
+            </ul>
+            <ul id="mail-ul">
                 <li>E-mails</li>
                 <ul>
                     <li><address>Institutional UFCG: <a href="mailto:lucasraniere@copin.ufcg.edu.br">lucasraniere@copin.ufcg.edu.br</a></address></li>

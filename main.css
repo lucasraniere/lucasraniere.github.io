@@ -1,4 +1,39 @@
 /* ids */
+#education-ul {
+    li {
+        list-style-image: url(assets/icons/list/education.png);
+    }
+    ul li {
+        list-style-image: url(assets/icons/list/item.png);
+    }
+}
+
+#pub-ul {
+    li {
+        list-style-image: url(assets/icons/list/paper.png);
+    }
+    ul li {
+        list-style-image: url(assets/icons/list/item.png);
+    }
+}
+
+#phone-ul {
+    li {
+        list-style-image: url(assets/icons/list/phone.png);
+    }
+    ul li {
+        list-style-image: url(assets/icons/list/item.png);
+    }
+}
+
+#mail-ul {
+    li {
+        list-style-image: url(assets/icons/list/mail.png);
+    }
+    ul li {
+        list-style-image: url(assets/icons/list/item.png);
+    }
+}
 
 #profile-pic {
     width: 13%;
