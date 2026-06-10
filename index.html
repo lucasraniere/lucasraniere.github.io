@@ -1,187 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Lucas Raniére J. Santos</title>
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png">
-    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main2.css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap' rel='stylesheet'>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lucas Raniére Juvino Santos — Ph.D., Developer and Researcher. Computer science research in social computing, NLP, machine learning, and computer vision." />
+  <title>Lucas Raniére Juvino Santos</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-soft: #161b22;
+      --fg: #c9d1d9;
+      --fg-strong: #f0f6fc;
+      --fg-muted: #8b949e;
+      --link: #58a6ff;
+      --border: #30363d;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { color-scheme: dark; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    h1, h2, h3 {
+      color: var(--fg-strong);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-top: 1.5em;
+      margin-bottom: 0.6em;
+    }
+
+    h1 {
+      font-size: 2em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid var(--border);
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid var(--border);
+      margin-top: 2em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+      margin-top: 1.6em;
+    }
+
+    p { margin: 0 0 1em; }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover, a:focus { text-decoration: underline; }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 2.5em 0;
+    }
+
+    ul { padding-left: 1.4em; margin: 0 0 1em; }
+    ul ul { margin: 0.2em 0 0.4em; }
+    li { margin-bottom: 0.3em; }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      background: var(--bg-soft);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    .subtitle {
+      color: var(--fg-muted);
+      font-size: 1.1em;
+      margin-top: -0.3em;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 0.5em;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .header-text { flex: 1; min-width: 0; }
+    .header-text h1 { margin: 0; border-bottom: none; padding-bottom: 0; }
+    .header-text .subtitle { margin-top: 0.2em; }
+
+    .contact {
+      margin: 1em 0 0.5em;
+      color: var(--fg-muted);
+    }
+
+    .contact a { color: var(--link); }
+
+    .contact-sep {
+      color: var(--border);
+      margin: 0 0.5em;
+    }
+
+    .cv-download {
+      display: inline-block;
+      margin-top: 0.5em;
+      padding: 6px 14px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--fg-strong);
+      font-size: 0.95em;
+    }
+
+    .cv-download:hover {
+      background: #1f2630;
+      text-decoration: none;
+    }
+
+    .entry-meta {
+      color: var(--fg-muted);
+      font-style: italic;
+      margin: 0.2em 0 0.6em;
+    }
+
+    .pub {
+      margin-bottom: 1.6em;
+    }
+
+    .pub-title {
+      color: var(--fg-strong);
+      font-weight: 600;
+    }
+
+    .pub-authors {
+      margin: 0.2em 0;
+    }
+
+    .pub-venue {
+      color: var(--fg-muted);
+      margin: 0.2em 0;
+    }
+
+    footer {
+      margin-top: 4em;
+      padding-top: 1.5em;
+      border-top: 1px solid var(--border);
+      color: var(--fg-muted);
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      main { padding: 32px 18px 48px; }
+      h1 { font-size: 1.7em; }
+      h2 { font-size: 1.3em; }
+      .contact-sep { display: block; height: 0.3em; visibility: hidden; margin: 0; }
+      .header-top { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .avatar { width: 96px; height: 96px; }
+    }
+  </style>
 </head>
 <body>
+  <main>
     <header>
-        <figure>
-            <img id="profile-pic" src="assets/images/profile-pic.png" alt="Lucas Raniére">
-        </figure>
-        <figure>
-            <img id="social-graph" src="assets/images/network.png" alt="social graph">
-        </figure>
-        <div id="intro-txt">
-            <h1><strong>Lucas Raniére</strong></h1>
-            <p class="hero-tagline">PhD Candidate in Computer Science | Complex Networks & AI Research</p>
+      <div class="header-top">
+        <img class="avatar" src="./1646273884888.jpg" alt="Photo of Lucas Raniére Juvino Santos" />
+        <div class="header-text">
+          <h1>Lucas Raniére Juvino Santos</h1>
+          <p class="subtitle">Ph.D., Developer and Researcher</p>
         </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#about-me">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#datasets">Datasets</a></li>
-                <li><a href="#skills">Technical Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      </div>
+      <p class="contact">
+        <a href="mailto:lucasraniere@copin.ufcg.edu.br">lucasraniere@copin.ufcg.edu.br</a>
+        <span class="contact-sep">·</span>
+        <a href="https://github.com/lucasraniere" target="_blank" rel="noopener">GitHub</a>
+        <span class="contact-sep">·</span>
+        <a href="https://www.linkedin.com/in/lucas-raniere" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="contact-sep">·</span>
+        <a href="http://lattes.cnpq.br/4271929115416114" target="_blank" rel="noopener">Lattes</a>
+      </p>
+      <p>
+        <a class="cv-download" href="./lucas-raniere_cv.pdf" download>Download CV (PDF)</a>
+      </p>
     </header>
-    <main>
-        <div class="content" id="about-me">
-            <h3>About Lucas</h3>
-            <p>
-                Ph.D. candidate in Computer Science at the Federal University of Campina Grande (<a href="https://www.computacao.ufcg.edu.br/p%C3%A1gina-principal" target="_blank">UFCG</a>).
-                Member of the Applied Intelligent Computing Laboratory (<a href="https://lacina.computacao.ufcg.edu.br/" target="_blank">LaCInA</a>) and the Distributed Systems Laboratory
-                (<a href="https://www.lsd.ufcg.edu.br/" target="_blank">LSD</a>) at UFCG. Currently, my work focuses on leveraging Large Language Models to identify and mitigate political polarization online,
-                as well as exploring the use of AI agents for automated fact-checking.
-            </p>
-            <ul id="social-list">
-                <li><a href="https://github.com/lucasraniere" target="_blank"><img class="social-icon" src="assets/icons/github-logo.svg" alt="GitHub" title="GitHub" width="25px"></a></li>
-                <li><a href="http://lattes.cnpq.br/4271929115416114" target="_blank"><img class="social-icon" src="assets/icons/lattes-logo.png" alt="Lattes" title="Lattes" width="25px"></a></li>
-                <li><a href="https://orcid.org/0000-0003-1072-5067" target="_blank"><img class="social-icon" src="assets/icons/orcid.svg" alt="orcid" title="Orcid" width="25px"></a></li>
-                <li><a href="https://www.linkedin.com/in/lucas-raniere/?locale=en_US" target="_blank"><img class="social-icon" src="assets/icons/linkedin-logo.svg" alt="LinkedIn" title="LinkedIn" width="25px"></a></li>
-                <li><a href="https://twitter.com/lucasRniere" target="_blank"><img class="social-icon" src="assets/icons/twitter-logo.svg" alt="Twitter/X" title="Twitter/X" width="25px"></a></li>
-            </ul>
-        </div>
-        <div class="section-divider"></div>
-        <div class="content" id="education">
-            <h3>Education</h3>
-            <ul id="education-ul">
-                <li>2021 - Current</li>
-                    <span><ul>
-                        <li>PhD in Computer Science<div>Federal University of Campina Grande, Campina Grande - PB, Brazil</div></li>
-                        <li>Research topics: Political radicalization and polarization; Social Media Networks; Large Language Models</li>
-                    </ul></span>
-                <li>December 2023 - August 2024</li>
-                    <span><ul>
-                        <li>Visiting Scholar at Indiana University
-                            <div>Indiana University, Bloomington - IN, USA</div>
-                            <div>Luddy School of Informatics, Computing, and Engineering</div>
-                            <div>Observatory on Social Media (<a href="https://osome.iu.edu/" target="_blank">OSoMe</a>)</div>
-                        </li>
-                    </ul></span>
-                <li>2018 - 2020</li>
-                    <span><ul>
-                        <li>Master's Degree in Computer Science<div>Federal University of Campina Grande, Campina Grande - PB, Brazil</div></li>
-                        <li>Research topics: Experimental Software Engineering; Software artifacts traceability</li>
-                        <li>Dissertation title: Improving Traceability Recovery Between Bugs Reports and Manual Test Cases</li>
-                    </ul></span>
-                <li>2012 - 2017</li>
-                    <span><ul>
-                        <li>Bachelor's Degree in Computer Science<div>Federal University of Alagoas, Arapiraca - AL, Brazil</div></li>
-                        <li>Research topics: Digital inclusion and accessibility; Machine text translation; Brazilian Sign Language (LIBRAS)</li>
-                        <li>Term Paper Title: Use of Probabilistic Reasoning to Resolve Lexical Ambiguities in Portuguese</li>
-                    </ul></span>
-            </ul>
-        </div>
-        <div class="section-divider"></div>
-        <div class="content" id="publications">
-            <h3>Publications</h3>
-            <ul id="pub-ul">
-                <li>2025</li>
-                    <ul>
-                        <li><span>Can Large Language Models Effectively Mitigate Polarization in Social Media Text?</span> Santos, L. R. J., Balby Marinho, L., Calazans Campelo, C. E., Menczer, Filippo & Flammini, Alessandro (2025, August). In Proceedings of the 17th ACM Web Science Conference. <a href="https://doi.org/10.1145/3717867.3717904" target="_blank">https://doi.org/10.1145/3717867.3717904</a></li>
-                    </ul>
-                <li>2022</li>
-                    <ul>
-                        <li><span>Uniting Politics and Pandemic: a Social Network Analysis on the COVID Parliamentary Commission of Inquiry in Brazil.</span> Santos, L. R. J., Balby Marinho, L., & Calazans Campelo, C. E. (2022, November). In Proceedings of the XXVIII Brazilian Symposium on Multimedia and the Web. <a href="https://doi.org/10.1145/3539637.3556992" target="_blank">https://doi.org/10.1145/3539637.3556992</a></li>
-                    </ul>
-                <li>2020</li>
-                    <ul>
-                        <li><span>Improving Traceability Recovery Between Bug Reports and Manual Test Cases.</span> Santos, L. R. J., Gadelha, G., Ramalho, F., & Massoni, T. (2020, October). In Proceedings of the XXXIV Brazilian Symposium on Software Engineering. <a href="https://doi.org/10.1145/3422392.3422424" target="_blank">https://doi.org/10.1145/3422392.3422424</a></li>
-                    </ul>
-            </ul>
-        </div>
-        <div class="section-divider"></div>
-        <div class="content" id="datasets">
-            <h3>Datasets</h3>
-            <ul id="dataset-ul">
-                <li>2025</li>
-                    <ul>
-                        <li><span>[Tweets] 2022 Brazilian Presidential Elections:</span> Containing 7,015,186 tweets from 951,602 users, collected over 36 days. <a href="https://doi.org/10.5281/zenodo.14834749" target="_blank">https://doi.org/10.5281/zenodo.14834749</a></li>
-                        <li><span>[Tweets] 2023 Brazilian Early Political Events:</span> Containing 13,910,048 tweets from 1,346,340 users, collected over 56 days. <a href="https://doi.org/10.5281/zenodo.14834704" target="_blank">https://doi.org/10.5281/zenodo.14834704</a></li>
-                    </ul>
-                <li>2022</li>
-                    <ul>
-                        <li><span>[Dataset] Tweets about COVID-19 Brazilian CPI:</span> Containing 3,397,933 tweets related to COVID-19 Parliamentary Commission of Inquiry. <a href="https://doi.org/10.5281/zenodo.8410348" target="_blank">https://doi.org/10.5281/zenodo.8410348</a></li>
-                    </ul>
-            </ul>
-        </div>
-        <div class="section-divider"></div>
-        <div class="content" id="skills">
-            <h3>Technical Skills & Expertise</h3>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4><span class="skill-icon">💻</span> Programming Languages</h4>
-                    <ul>
-                        <li>Python</li>
-                        <li>R</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4><span class="skill-icon">🔬</span> Technologies & Tools</h4>
-                    <ul>
-                        <li>Machine Learning</li>
-                        <li>Network Analysis</li>
-                        <li>Data Science</li>
-                        <li>Natural Language Processing</li>
-                        <li>LangGraph/LangChain</li>
-                        <li>Pandas</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4><span class="skill-icon">📊</span> Research Areas</h4>
-                    <ul>
-                        <li>Social Media Analysis</li>
-                        <li>AI Agents</li>
-                        <li>Political Polarization</li>
-                        <li>Natural Language Processing</li>
-                        <li>Social Computing</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="section-divider"></div>
-        <div class="content" id="contact">
-            <h3>Contact</h3>
-            <ul id="phone-ul">
-                <li>Phone numbers</li>
-                <ul>
-                    <li><address>+55 (82) 99683-4878 (<a href="https://api.whatsapp.com/send?phone=5582996834878" target="_blank">WhatsApp</a>, Telegram, Text)</address></li>
-                    <!-- <li><address>+1 (812) 381-7460 (<a href="https://api.whatsapp.com/send?phone=18123817460" target="_blank">WhatsApp</a>, Text)</address></li> -->
-                </ul>
-            </ul>
-            <ul id="mail-ul">
-                <li>E-mails</li>
-                <ul>
-                    <li><address>Institutional UFCG: <a href="mailto:lucasraniere@copin.ufcg.edu.br">lucasraniere@copin.ufcg.edu.br</a></address></li>
-                    <!-- <li><address>Institutional IUB: <a href="mailto:ljuvinos@iu.edu">ljuvinos@iu.edu</a></address></li> -->
-                    <li><address>Personal: <a href="mailto:lucas.raniere94@gmail.com">lucas.raniere94@gmail.com</a></address></li>
-                </ul>
-            </ul>
-        </div>
-        <div class="section-divider"></div>
-        <div class="content" id="cta">
-            <h3>Let's Connect</h3>
-            <p>
-                I'm always interested in discussing research opportunities, collaborations, and new projects in the fields of complex networks, AI, and social media analysis. Feel free to reach out if you'd like to connect or learn more about my work.
-            </p>
-            <div class="cta-buttons">
-                <a href="#contact" class="cta-button primary">Get in Touch</a>
-                <a href="mailto:lucasraniere@copin.ufcg.edu.br" class="cta-button secondary">Send Email</a>
-            </div>
-        </div>
-    </main>
+
+    <!-- About: short neutral intro drafted from CV themes — feel free to edit. -->
+    <section>
+      <h2>About</h2>
+      <p>
+        I am a computer scientist working at the intersection of social computing, natural language processing, and machine learning, with research spanning political polarization on social media, intelligent agents for fact-checking, and applied computer vision. I currently work on <strong>Judo-AI</strong>, applying computer vision to combat sports.
+      </p>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Academic Experience</h2>
+
+      <h3>Ph.D. in Computer Science</h3>
+      <p class="entry-meta">Federal University of Campina Grande, Campina Grande – PB, Brazil · 2021 – 2025</p>
+      <ul>
+        <li>Research topics: political polarization and radicalization on social media networks.</li>
+        <li>December 2023 – August 2024: Visiting Ph.D. Researcher at <strong>Indiana University</strong> (Bloomington, Indiana).</li>
+      </ul>
+
+      <h3>Master's Degree in Computer Science</h3>
+      <p class="entry-meta">Federal University of Campina Grande, Campina Grande – PB, Brazil · 2018 – 2020</p>
+      <ul>
+        <li>Research topics: experimental software engineering and software artifact traceability.</li>
+        <li>Dissertation: <em>Improving Traceability Recovery Between Bug Reports and Manual Test Cases</em>.</li>
+      </ul>
+
+      <h3>Bachelor's Degree in Computer Science</h3>
+      <p class="entry-meta">Federal University of Alagoas, Arapiraca – AL, Brazil · 2012 – 2017</p>
+      <ul>
+        <li>Research topics: text translation into sign language and digital inclusion of deaf people.</li>
+        <li>Term paper: <em>Use of Probabilistic Reasoning to Resolve Lexical Ambiguities in Portuguese</em>.</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Research Projects</h2>
+
+      <h3>Judo-AI — Applied Computer Vision for combat sports</h3>
+      <p class="entry-meta">Software Practices Laboratory (SPLab – UFCG) · IBM · Flamengo · 2025 – present</p>
+      <ul>
+        <li>Computer vision
+          <ul>
+            <li>Object detection</li>
+            <li>Video segmentation</li>
+            <li>Human action recognition</li>
+            <li>Video understanding</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Agents4Good — Intelligent Agents for Automatic Fact-checking</h3>
+      <p class="entry-meta">Federal University of Campina Grande · Kunumi Institute · 2024 – 2025</p>
+      <ul>
+        <li>Social computing</li>
+        <li>AI agents
+          <ul>
+            <li>LangChain and LangGraph</li>
+          </ul>
+        </li>
+        <li>Natural language processing
+          <ul>
+            <li>Speech analysis</li>
+            <li>Argument analysis</li>
+            <li>Toxicity detection</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Advanced Intelligent Channels — Applied ML for sales/support chat automation</h3>
+      <p class="entry-meta">Federal University of Campina Grande · Dell · 2021 – 2022</p>
+      <ul>
+        <li>Natural language processing</li>
+        <li>Machine learning</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Publications</h2>
+
+      <div class="pub">
+        <p class="pub-title">Can Large Language Models Effectively Mitigate Polarization in Social Media Text?</p>
+        <p class="pub-authors">Lucas Raniére Juvino Santos, Leandro Balby Marinho, Claudio Elizio Calazans Campelo, Filippo Menczer, and Alessandro Flammini.</p>
+        <p class="pub-venue">Proceedings of the 17th ACM Web Science Conference (WebSci '25). ACM, New York, NY, USA, 348–357.</p>
+        <p><a href="https://doi.org/10.1145/3717867.3717904" target="_blank" rel="noopener">doi.org/10.1145/3717867.3717904</a></p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Uniting Politics and Pandemic: a Social Network Analysis on the COVID Parliamentary Commission of Inquiry in Brazil</p>
+        <p class="pub-authors">Lucas Raniére Juvino Santos, Leandro Balby Marinho, and Claudio Elizio Calazans Campelo. 2022.</p>
+        <p class="pub-venue">Proceedings of the Brazilian Symposium on Multimedia and the Web (WebMedia '22). ACM, New York, NY, USA, 99–107.</p>
+        <p><a href="https://doi.org/10.1145/3539637.3556992" target="_blank" rel="noopener">doi.org/10.1145/3539637.3556992</a></p>
+      </div>
+
+      <div class="pub">
+        <p class="pub-title">Improving Traceability Recovery Between Bug Reports and Manual Test Cases</p>
+        <p class="pub-authors">Lucas Raniére Juvino Santos, Guilherme Gadelha, Franklin Ramalho, and Tiago Massoni. 2020.</p>
+        <p class="pub-venue">Proceedings of the XXXIV Brazilian Symposium on Software Engineering (SBES '20). ACM, New York, NY, USA, 293–302.</p>
+        <p><a href="https://doi.org/10.1145/3422392.3422424" target="_blank" rel="noopener">doi.org/10.1145/3422392.3422424</a></p>
+      </div>
+    </section>
+
     <footer>
-        &copy; 2025 Lucas Raniére. All Rights Reserved.
+      © 2026 Lucas Raniére Juvino Santos · Built as a static page on GitHub Pages
     </footer>
+  </main>
 </body>
 </html>
