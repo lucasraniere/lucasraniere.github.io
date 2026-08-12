@@ -117,21 +117,19 @@
     .header-text h1 { margin: 0; border-bottom: none; padding-bottom: 0; }
     .header-text .subtitle { margin-top: 0.2em; }
 
-    .contact {
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin: 1em 0 0.5em;
-      color: var(--fg-muted);
+      padding: 0;
+      list-style: none;
     }
 
-    .contact a { color: var(--link); }
-
-    .contact-sep {
-      color: var(--border);
-      margin: 0 0.5em;
-    }
-
-    .cv-download {
-      display: inline-block;
-      margin-top: 0.5em;
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 6px 14px;
       background: var(--bg-soft);
       border: 1px solid var(--border);
@@ -140,9 +138,45 @@
       font-size: 0.95em;
     }
 
-    .cv-download:hover {
+    .contact-link:hover, .contact-link:focus {
       background: #1f2630;
       text-decoration: none;
+    }
+
+    .contact-link svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      padding: 14px 0;
+      margin: 1.5em -24px 0;
+      padding-left: 24px;
+      padding-right: 24px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-nav a {
+      color: var(--fg-muted);
+      font-size: 0.95em;
+      white-space: nowrap;
+    }
+
+    .site-nav a:hover, .site-nav a:focus {
+      color: var(--fg-strong);
     }
 
     .entry-meta {
@@ -178,13 +212,15 @@
       text-align: center;
     }
 
+    section[id] { scroll-margin-top: 64px; }
+
     @media (max-width: 480px) {
       main { padding: 32px 18px 48px; }
       h1 { font-size: 1.7em; }
       h2 { font-size: 1.3em; }
-      .contact-sep { display: block; height: 0.3em; visibility: hidden; margin: 0; }
       .header-top { flex-direction: column; align-items: flex-start; gap: 16px; }
       .avatar { width: 96px; height: 96px; }
+      .site-nav { margin: 1.5em -18px 0; padding-left: 18px; padding-right: 18px; }
     }
   </style>
 </head>
@@ -198,31 +234,28 @@
           <p class="subtitle">Ph.D., Developer and Researcher</p>
         </div>
       </div>
-      <p class="contact">
-        <a href="mailto:lucasraniere@copin.ufcg.edu.br">lucasraniere@copin.ufcg.edu.br</a>
-        <span class="contact-sep">·</span>
-        <a href="https://github.com/lucasraniere" target="_blank" rel="noopener">GitHub</a>
-        <span class="contact-sep">·</span>
-        <a href="https://www.linkedin.com/in/lucas-raniere" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="contact-sep">·</span>
-        <a href="http://lattes.cnpq.br/4271929115416114" target="_blank" rel="noopener">Lattes</a>
-      </p>
-      <p>
-        <a class="cv-download" href="./lucas-raniere_cv.pdf" download>Download CV (PDF)</a>
-      </p>
     </header>
 
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#academic-experience">Academic Experience</a>
+      <a href="#research-projects">Research Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#datasets-models">Datasets and Models</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
     <!-- About: short neutral intro drafted from CV themes — feel free to edit. -->
-    <section>
+    <section id="about">
       <h2>About</h2>
       <p>
-        I am a computer scientist working at the intersection of social computing, natural language processing, and machine learning, with research spanning political polarization on social media, intelligent agents for fact-checking, and applied computer vision. I currently work on <strong>Judo-AI</strong>, applying computer vision to combat sports.
+        I am a computer scientist with research interests spanning social computing, natural language processing, and machine learning, including political polarization on social media, fact-checking, intelligent agents, and applied computer vision. I currently work on <strong>Judo-AI</strong>, applying computer vision to combat sports.
       </p>
     </section>
 
     <hr />
 
-    <section>
+    <section id="academic-experience">
       <h2>Academic Experience</h2>
 
       <h3>Ph.D. in Computer Science</h3>
@@ -249,7 +282,7 @@
 
     <hr />
 
-    <section>
+    <section id="research-projects">
       <h2>Research Projects</h2>
 
       <h3>Judo-AI — Applied Computer Vision for combat sports</h3>
@@ -293,7 +326,7 @@
 
     <hr />
 
-    <section>
+    <section id="publications">
       <h2>Publications</h2>
 
       <div class="pub">
@@ -332,12 +365,12 @@
 
     <hr />
 
-    <section>
+    <section id="datasets-models">
       <h2>Datasets and Models</h2>
 
       <div class="pub">
         <p class="pub-title">Judo-AI 3 Classes Models (Weights from "best.pt")</p>
-        <p class="pub-venue">Pre-trained YOLO object detection model weights for identifying referees and athletes (blue judogi, white judogi/red belt) in judo matches.</p>
+        <p class="pub-venue">Pre-trained YOLO object detection model weights for identifying three classes in judo matches: referee, blue athlete, and white athlete.</p>
         <p><a href="https://zenodo.org/records/19962245" target="_blank" rel="noopener">zenodo.org/records/19962245</a></p>
       </div>
 
@@ -358,6 +391,44 @@
         <p class="pub-venue">A dataset of roughly 3.4 million tweets collected over 26 weeks regarding Brazil's COVID-19 Parliamentary Commission of Inquiry.</p>
         <p><a href="https://zenodo.org/records/8410348" target="_blank" rel="noopener">zenodo.org/records/8410348</a></p>
       </div>
+    </section>
+
+    <hr />
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-links">
+        <li>
+          <a class="contact-link" href="mailto:lucasraniere@copin.ufcg.edu.br">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22 6 12 13 2 6"></polyline></svg>
+            <span>lucasraniere@copin.ufcg.edu.br</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact-link" href="https://github.com/lucasraniere" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact-link" href="https://www.linkedin.com/in/lucas-raniere" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact-link" href="http://lattes.cnpq.br/4271929115416114" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <span>Lattes</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact-link" href="./lucas-raniere_cv.pdf" download>
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Download CV (PDF)</span>
+          </a>
+        </li>
+      </ul>
     </section>
 
     <footer>
